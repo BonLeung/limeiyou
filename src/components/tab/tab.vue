@@ -26,6 +26,7 @@ export default {
   display: flex;
   flex-direction: row;
   background-color: #fff;
+  z-index: -1;
   &::before {
     display: block;
     content: '';

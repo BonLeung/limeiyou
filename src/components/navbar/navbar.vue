@@ -70,6 +70,7 @@ export default {
     align-items: center;
     .title {
       padding: 0 10px;
+      line-height: 20px;
       font-size: 16px;
       color: #333;
       overflow: hidden;

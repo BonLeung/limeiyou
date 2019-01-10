@@ -16,7 +16,7 @@
         </div>
         <div class="like-wrap">
           <img
-            src="../../common/image/community/icon-like-empty.png"
+            :src="likeIcon"
             alt=""
             class="icon-like">
           <span class="like-num">{{article.likeNum}}</span>
@@ -32,6 +32,13 @@ export default {
   props: {
     article: {
       type: Object
+    }
+  },
+  computed: {
+    likeIcon() {
+      return this.article.isLike
+        ? require('../../common/image/community/icon-like-full.png')
+        : require('../../common/image/community/icon-like-empty.png')
     }
   }
 }
@@ -62,7 +69,7 @@ export default {
       -webkit-line-clamp: 2;
       overflow: hidden;
       text-overflow: ellipsis;
-      line-height: 13px;
+      line-height: 14px;
       height: 26px;
       font-size: 11px;
       color: #333;

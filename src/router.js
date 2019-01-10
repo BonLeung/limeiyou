@@ -17,6 +17,16 @@ export default new Router({
       component: () => import('./views/home/home.vue')
     },
     {
+      path: '/select-area',
+      name: 'select-area',
+      component: () => import('./views/select-area/select-area.vue')
+    },
+    {
+      path: '/select-city',
+      name: 'select-city',
+      component: () => import('./views/select-city/select-city.vue')
+    },
+    {
       path: '/mall',
       name: 'mall',
       component: () => import('./views/mall/mall.vue')

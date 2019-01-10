@@ -23,20 +23,12 @@
         ref="scroll"
         direction="horizontal">
           <ul class="classification-list">
-            <li class="classification-item">
-              <span class="name">育儿教育</span>
-            </li>
-            <li class="classification-item">
-              <span class="name">形象品味</span>
-            </li>
-            <li class="classification-item">
-              <span class="name">卫生健康</span>
-            </li>
-            <li class="classification-item">
-              <span class="name">家庭情感</span>
-            </li>
-            <li class="classification-item">
-              <span class="name">法律法务</span>
+            <li class="classification-item"
+              v-for="(item, index) in classifications"
+              :key="index"
+              :class="item.id === selectedPrimaryClassId ? 'active' : ''"
+              @click="selectPrimaryClassification(item)">
+              <span class="name">{{item.name}}</span>
             </li>
           </ul>
         </cube-scroll>
@@ -52,6 +44,32 @@
           </ul>
         </cube-scroll>
       </div>
+      <div class="sub-classification-wrap">
+        <transition name="slide">
+          <ul class="sub-classification-list" v-show="modalShow">
+            <li
+              v-for="(item, index) in secondaryClassifications"
+              :key="index"
+              class="sub-classification"
+              @click="selectSecondaryClassification(item)"
+              >
+              <div class="name">{{item.name}}</div>
+              <img
+                src="../../common/image/community/icon-selected.png"
+                alt=""
+                class="icon-selected"
+                v-if="item.id === selectedSecondaryClassId">
+            </li>
+          </ul>
+        </transition>
+      </div>
+      <transition name="fade">
+        <div
+          class="mask"
+          v-show="modalShow"
+          @click="hideModal">
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -88,7 +106,7 @@ const articles = [{
     avatar: require('../../common/image/test/avatar.png'),
     name: 'GiGi'
   },
-  isLike: true,
+  isLike: false,
   likeNum: 346
 }, {
   id: 4,
@@ -132,11 +150,97 @@ const articles = [{
   likeNum: 346
 }]
 
+const classifications = [{
+  id: 1,
+  name: '育儿教育',
+  items: [{
+    id: 1,
+    name: '教育专家'
+  }, {
+    id: 2,
+    name: '宝贝才艺'
+  }]
+}, {
+  id: 2,
+  name: '形象品味',
+  items: [{
+    id: 3,
+    name: '形象品味'
+  }, {
+    id: 4,
+    name: '形象品味'
+  }]
+}, {
+  id: 3,
+  name: '卫生健康',
+  items: [{
+    id: 5,
+    name: '卫生健康'
+  }, {
+    id: 6,
+    name: '卫生健康'
+  }]
+}, {
+  id: 4,
+  name: '家庭情感',
+  items: [{
+    id: 7,
+    name: '家庭情感'
+  }, {
+    id: 8,
+    name: '家庭情感'
+  }]
+}, {
+  id: 5,
+  name: '法律法务',
+  items: [{
+    id: 9,
+    name: '法律法务'
+  }, {
+    id: 10,
+    name: '法律法务'
+  }]
+}]
+
 export default {
   name: 'community',
   data() {
     return {
-      articles: articles
+      articles: articles,
+      modalShow: false,
+      classifications: classifications,
+      clickPrimaryClassId: '', // 点击的一级分类
+      selectedPrimaryClassId: '',
+      selectedSecondaryClassId: ''
+    }
+  },
+  computed: {
+    secondaryClassifications() {
+      const index = this.classifications.findIndex(item => item.id === this.clickPrimaryClassId)
+      if (index !== -1) {
+        return this.classifications[index].items
+      }
+      return []
+    }
+  },
+  methods: {
+    selectPrimaryClassification(item) {
+      this.clickPrimaryClassId = item.id
+      this.showModal()
+    },
+    selectSecondaryClassification(item) {
+      this.selectedSecondaryClassId = item.id
+      this.selectedPrimaryClassId = this.clickPrimaryClassId
+      this.hideModal()
+    },
+    hideModal() {
+      this.modalShow = false
+    },
+    showModal() {
+      if (this.modalShow === true) {
+        return
+      }
+      this.modalShow = true
     }
   },
   components: {
@@ -220,22 +324,82 @@ export default {
               background-color: #ededed;
               transform: scaleX(.5);
             }
+            &:last-child::after {
+              display: none;
+            }
+            &.active {
+              .name {
+                font-weight: 500;
+                color: #F64952;
+              }
+            }
             .name {
               display: inline-block;
               vertical-align: top;
               font-size: 12px;
-              color: #999;
+              color: #333;
             }
+          }
+        }
+      }
+    }
+    .mask {
+      position: fixed;
+      top: 130px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .5);
+      z-index: 1;
+    }
+    .sub-classification-wrap {
+      position: fixed;
+      top: 130px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      overflow: hidden;
+      z-index: 2;
+      .sub-classification-list {
+        padding: 0 15px;
+        background-color: #fff;
+        z-index: 2;
+        .sub-classification {
+          position: relative;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 12px;
+          &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #ededed;
+            transform: scaleY(.5);
+          }
+          .name {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999;
+          }
+          .icon-selected {
+            width: 15px;
+            height: 15px;
           }
         }
       }
     }
     .article-wrap {
       position: absolute;
-      top: 88px;
+      top: 86px;
       right: 0;
-      bottom: 0;
       left: 0;
+      bottom: 0;
       background-color: #f4f4f4;
       .article-list {
         padding: 13px 15px;
@@ -248,5 +412,19 @@ export default {
       }
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all .3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+  transition: all .3s;
+}
+.slide-enter, .slide-leave-to {
+  transform: translate3d(0, -100%, 0);
 }
 </style>

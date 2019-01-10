@@ -5,7 +5,7 @@
         <router-view />
       </keep-alive>
     </transition>
-    <tab />
+    <tab v-show="showTab" />
   </div>
 </template>
 
@@ -16,7 +16,8 @@ import Tab from './components/tab/tab'
 export default {
   data() {
     return {
-      transionName: 'slide-right'
+      transionName: 'slide-right',
+      showTab: false
     }
   },
   components: {
@@ -24,6 +25,13 @@ export default {
   },
   watch: {
     '$route'(to, from) {
+      // 仅在首页和个人中心显示 tab
+      if (to.path === '/' || to.path === '/me') {
+        this.showTab = true
+      } else {
+        this.showTab = false
+      }
+      // 判断是前进还是后退进行对应的入场出场动画
       let isBack = this.$router.isBack
       if (!isBack && (to.path === '/' || to.path === '/me')) {
         this.transionName = ''

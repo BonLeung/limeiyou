@@ -3,7 +3,7 @@
     <cube-scroll>
       <div class="header">
         <div class="header-bar">
-          <div class="location-wrap">
+          <div class="location-wrap" @click="() => this.$router.push('/select-area')">
             <span class="location">广州</span>
             <img src="../../common/image/home/icon-down.png" alt="" class="icon-down">
           </div>
