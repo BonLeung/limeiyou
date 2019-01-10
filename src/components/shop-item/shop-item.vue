@@ -12,9 +12,9 @@
           <span class="num">{{shop.discountNum}}</span>
         </div>
       </div>
-      <div class="home">
+      <router-link tag="div" to="/shop-detail" class="home extends-click">
         <img src="../../common/image/mall/icon-home.png" alt="" class="icon-home">
-      </div>
+      </router-link>
     </div>
     <div class="goods">
       <cube-scroll
@@ -22,7 +22,11 @@
         direction="horizontal"
         class="goods-list-wrap">
         <ul class="goods-list">
-          <li class="goods-item" v-for="item in shop.goods" :key="item.id">
+          <li
+            class="goods-item"
+            v-for="item in shop.goods"
+            :key="item.id"
+            @click="viewDetail">
             <img src="../../common/image/test/goods-img-l.png" alt="">
             <div class="price-wrap" v-if="!item.isDiscount">
               <div class="price-content normal">
@@ -52,7 +56,8 @@
         <li
           class="hot-item"
           v-for="(item, index) in shop.hots"
-          :key="index">
+          :key="index"
+          @click="viewDetail">
           <img class="thumbnail" src="../../common/image/test/goods-img.png" alt="">
           <div class="content">
             <div class="name">{{item.name}}</div>
@@ -83,6 +88,11 @@ export default {
     showHots: {
       type: Boolean,
       default: true
+    }
+  },
+  methods: {
+    viewDetail() {
+      this.$router.push('/goods-detail')
     }
   }
 }
@@ -140,10 +150,8 @@ export default {
     }
     .home {
       position: absolute;
-      right: 25px;
-      top: 5px;
-      width: 23px;
-      height: 25px;
+      right: 30px;
+      top: 10px;
       display: flex;
       justify-content: center;
       align-items: center;

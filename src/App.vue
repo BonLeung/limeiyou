@@ -52,7 +52,7 @@ export default {
 
 .slide-right-enter-active, .slide-right-leave-active,
 .slide-left-enter-active, .slide-left-leave-active {
-  transition: all .5s;
+  transition: all .3s linear;
 }
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;

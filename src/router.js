@@ -22,9 +22,39 @@ export default new Router({
       component: () => import('./views/mall/mall.vue')
     },
     {
+      path: '/classification',
+      name: 'classification',
+      component: () => import('./views/classification/classification.vue')
+    },
+    {
+      path: '/goods-list',
+      name: 'goods-list',
+      component: () => import('./views/goods-list/goods-list.vue')
+    },
+    {
+      path: '/goods-detail',
+      name: 'goods-detail',
+      component: () => import('./views/goods-detail/goods-detail.vue')
+    },
+    {
+      path: '/goods-comments',
+      name: 'goods-comments',
+      component: () => import('./views/goods-comments/goods-comments.vue')
+    },
+    {
       path: '/shops',
       name: 'shops',
       component: () => import('./views/shops/shops.vue')
+    },
+    {
+      path: '/shop-detail',
+      name: 'shop-detail',
+      component: () => import('./views/shop-detail/shop-detail.vue')
+    },
+    {
+      path: '/community',
+      name: 'community',
+      component: () => import('./views/community/community.vue')
     },
     {
       path: '/me',

@@ -58,9 +58,9 @@
           <router-link tag="div" to="/mall" class="nav-item">
             <img src="../../common/image/home/mall.png" alt="">
           </router-link>
-          <div class="nav-item">
+          <router-link tag="div" to="/community" class="nav-item">
             <img src="../../common/image/home/community.png" alt="">
-          </div>
+          </router-link>
         </div>
       </div>
     </cube-scroll>
@@ -189,6 +189,7 @@ export default {
     .action-nav {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       .nav-item {
         position: relative;
         flex: 1;

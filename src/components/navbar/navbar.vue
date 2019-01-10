@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <div class="back-wrap" @click="back">
+    <div class="back-wrap extends-click" @click="back">
       <img class="icon" src="../../common/image/public/icon-back.png" alt="">
     </div>
     <div class="title-wrap">
@@ -37,7 +37,7 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5px;
+  padding: 0 15px;
   &::after {
     display: block;
     content: '';
@@ -50,8 +50,7 @@ export default {
     transform: scaleY(.5);
   }
   .back-wrap {
-    width: 26px;
-    height: 44px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,6 +79,9 @@ export default {
   }
   .right-wrap {
     height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="mall">
     <navbar title="利美商城">
-      <div class="shopcart-wrap" slot="right">
+      <div class="shopcart extends-click" slot="right">
         <img class="icon" src="../../common/image/mall/icon-shopcart-d.png" alt="">
       </div>
     </navbar>
@@ -15,22 +15,31 @@
           </cube-slide>
         </div>
         <div class="nav-wrap">
-          <div class="nav-item">
+          <router-link
+            tag="div"
+            :to="{path: '/classification', query: {id: 2}}"
+            class="nav-item">
             <img src="../../common/image/mall/icon-clothing.png" alt="">
             <div class="name">衣帽</div>
-          </div>
-          <div class="nav-item">
+          </router-link>
+          <router-link
+            tag="div"
+            :to="{path: '/classification', query: {id: 3}}"
+            class="nav-item">
             <img src="../../common/image/mall/icon-beauty.png" alt="">
             <div class="name">美妆</div>
-          </div>
-          <div class="nav-item">
+          </router-link>
+          <router-link
+            tag="div"
+            :to="{path: '/classification', query: {id: 4}}"
+            class="nav-item">
             <img src="../../common/image/mall/icon-accessory.png" alt="">
             <div class="name">饰品</div>
-          </div>
-          <div class="nav-item">
+          </router-link>
+          <router-link tag="div" to="/classification" class="nav-item">
             <img src="../../common/image/mall/icon-all.png" alt="">
             <div class="name">全部分类</div>
-          </div>
+          </router-link>
         </div>
         <div class="shop-wrap">
           <div class="head">
@@ -83,6 +92,12 @@ export default {
           isDiscount: true
         }, {
           id: 3,
+          img: require('../../common/image/test/goods-img-l.png'),
+          price: 848,
+          oldPrice: 999,
+          isDiscount: false
+        }, {
+          id: 6,
           img: require('../../common/image/test/goods-img-l.png'),
           price: 848,
           oldPrice: 999,
@@ -164,9 +179,7 @@ export default {
   left: 0;
   background-color: #fff;
   z-index: 1;
-  .shopcart-wrap {
-    width: 37px;
-    height: 44px;
+  .shopcart {
     display: flex;
     justify-content: center;
     align-items: center;
