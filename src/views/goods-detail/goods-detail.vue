@@ -73,24 +73,67 @@
           <img class="icon" src="../../common/image/mall/icon-store.png" alt="">
           <div class="name">店铺</div>
         </router-link>
-        <div class="link-item">
+        <router-link tag="div" to="/shopcart" class="link-item">
           <img class="icon" src="../../common/image/mall/icon-shopcart-l.png" alt="">
           <div class="name">购物车</div>
-        </div>
+        </router-link>
         <div class="link-item">
           <img class="icon" src="../../common/image/mall/icon-service.png" alt="">
           <div class="name">客服</div>
         </div>
       </div>
       <div class="actions">
-        <div class="action-item add">
+        <div class="action-item add" @click="add">
           <div class="name">加入购物车</div>
         </div>
-        <div class="action-item buy">
+        <div class="action-item buy" @click="buy">
           <div class="name">立即购买</div>
         </div>
       </div>
     </div>
+    <transition name="slide">
+      <div class="select-attr-modal" v-show="modalShow">
+        <div class="head">
+          <div class="title">{{modalTitle}}</div>
+          <div class="close extends-click" @click="hideModal">
+            <img src="../../common/image/public/icon-close.png" alt="">
+          </div>
+        </div>
+        <div class="modal-content">
+          <div class="goods-info">
+            <img src="../../common/image/test/goods-img.png" alt="" class="thumbnail">
+            <div class="info-content">
+              <div class="price">
+                <span class="unit">￥</span>
+                <span class="num">899.00</span>
+              </div>
+              <p class="tips">选择：{{modalTitle}}</p>
+              <div class="stock">库存充足</div>
+            </div>
+          </div>
+          <div class="attr-wrap">
+            <div class="attr-item"
+              v-for="(item, index) in goodsInfo.attrs"
+              :key="index">
+              <div class="name">{{item.name}}</div>
+              <ul class="attrs">
+                <li class="attr"
+                  v-for="(item, index) in item.items"
+                  :key="index">
+                  <span class="text">{{item.content}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div class="confirm-btn">确认</div>
+        </div>
+      </div>
+    </transition>
+    <transition name="fade">
+      <div class="mask" v-show="modalShow" @click="hideModal"></div>
+    </transition>
   </div>
 </template>
 
@@ -114,6 +157,30 @@ export default {
           name: '利美商城',
           thumbnail: require('../../common/image/test/goods-img.png')
         },
+        attrs: [{
+          id: 1,
+          name: '尺寸',
+          items: [{
+            id: 1,
+            content: 'S'
+          }, {
+            id: 2,
+            content: 'M'
+          }, {
+            id: 3,
+            content: 'L'
+          }]
+        }, {
+          id: 2,
+          name: '颜色',
+          items: [{
+            id: 1,
+            content: '黑色'
+          }, {
+            id: 2,
+            content: '褐色'
+          }]
+        }],
         comments: [{
           user: {
             avatar: require('../../common/image/test/avatar.png'),
@@ -136,12 +203,31 @@ export default {
           stars: 4,
           comment: '您好，非常感谢您对利美官方旗舰店的支持，您的肯定就是对我们最大的支持。我们不定期会开展各种优惠活动的呢~建议您可以收藏关注下我们店铺...'
         }]
-      }
+      },
+      modalShow: false
+    }
+  },
+  computed: {
+    modalTitle() {
+      const title = this.goodsInfo.attrs.map(item => item.name).join('、') || ''
+      return title
     }
   },
   methods: {
     back() {
       this.$router.goBack()
+    },
+    showModal() {
+      this.modalShow = true
+    },
+    hideModal() {
+      this.modalShow = false
+    },
+    add() {
+      this.showModal()
+    },
+    buy() {
+      this.showModal()
     }
   },
   components: {
@@ -403,6 +489,158 @@ export default {
         }
       }
     }
+  }
+
+  .select-attr-modal {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 3;
+    .head {
+      position: relative;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #ededed;
+        transform: scaleY(.5);
+      }
+      .title {
+        font-size: 14px;
+        color: #333;
+      }
+      .close {
+        display: flex;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    .modal-content {
+      padding: 0 15px;
+      .goods-info {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        .thumbnail {
+          flex: 0 0 70px;
+          width: 70px;
+          height: 70px;
+          border-radius: 5px;
+        }
+        .info-content {
+          margin-left: 12px;
+          flex: 1;
+          height: 70px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .price {
+            display: flex;
+            align-items: flex-end;
+            .unit {
+              font-size: 12px;
+              color: #F64952;
+            }
+            .num {
+              font-size: 14px;
+              color: #F64952;
+            }
+          }
+          .tips {
+            margin-top: 14px;
+            font-size: 12px;
+            color: #999;
+          }
+          .stock {
+            margin-top: 14px;
+            font-size: 12px;
+            color: #999;
+          }
+        }
+      }
+      .attr-wrap {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        .attr-item {
+          margin-top: 12px;
+          .name {
+            font-size: 12px;
+            color: #999;
+          }
+          .attrs {
+            margin-top: 12px;
+            display: flex;
+            .attr {
+              min-width: 45px;
+              height: 25px;
+              line-height: 25px;
+              text-align: center;
+              margin-right: 15px;
+              margin-bottom: 5px;
+              padding: 0 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 3px;
+              border: 1px solid #D9D9D9;
+              box-sizing: border-box;
+              .text {
+                font-size: 12px;
+                color: #999;
+              }
+            }
+          }
+        }
+      }
+    }
+    .foot {
+      .confirm-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: #F64952;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+      }
+    }
+  }
+  .mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: all .3s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+
+  .slide-enter-active, .slide-leave-active {
+    transition: all .3s;
+  }
+  .slide-enter, .slide-leave-to {
+    transform: translate3d(0, 100%, 0);
   }
 }
 </style>

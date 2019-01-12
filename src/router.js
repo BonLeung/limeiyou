@@ -52,6 +52,11 @@ export default new Router({
       component: () => import('./views/goods-comments/goods-comments.vue')
     },
     {
+      path: '/shopcart',
+      name: 'shopcart',
+      component: () => import('./views/shopcart/shopcart.vue')
+    },
+    {
       path: '/shops',
       name: 'shops',
       component: () => import('./views/shops/shops.vue')
@@ -65,6 +70,11 @@ export default new Router({
       path: '/community',
       name: 'community',
       component: () => import('./views/community/community.vue')
+    },
+    {
+      path: '/article-detail',
+      name: 'article-detail',
+      component: () => import('./views/article-detail/article-detail.vue')
     },
     {
       path: '/me',

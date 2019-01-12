@@ -67,7 +67,7 @@ export default {
       text-overflow: ellipsis;
       height: 28px;
       line-height: 15px;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 12px;
       color: #333;
     }
@@ -83,10 +83,12 @@ export default {
           display: flex;
           align-items: flex-end;
           .unit {
+            line-height: 14px;
             font-size: 10px;
             color: #333;
           }
           .price {
+            line-height: 14px;
             font-size: 14px;
             color: #333;
           }

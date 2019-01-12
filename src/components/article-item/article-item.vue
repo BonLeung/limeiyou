@@ -1,5 +1,5 @@
 <template>
-  <div class="article-item">
+  <div class="article-item" @click="viewArticle">
     <img
       class="head-img"
       :src="article.headImg"
@@ -39,6 +39,11 @@ export default {
       return this.article.isLike
         ? require('../../common/image/community/icon-like-full.png')
         : require('../../common/image/community/icon-like-empty.png')
+    }
+  },
+  methods: {
+    viewArticle() {
+      this.$router.push('/article-detail')
     }
   }
 }

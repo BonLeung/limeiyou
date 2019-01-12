@@ -71,6 +71,7 @@ export default {
     .title {
       padding: 0 10px;
       line-height: 20px;
+      font-weight: 500;
       font-size: 16px;
       color: #333;
       overflow: hidden;
