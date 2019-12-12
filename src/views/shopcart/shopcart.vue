@@ -38,24 +38,16 @@
         <div class="statistic">
           <div class="total-wrap">
             <div class="title">合计:</div>
-<<<<<<< HEAD
             <div class="total">
               <span class="unit">￥</span>
               <span class="num">0</span>
             </div>
-=======
-            <div class="total">￥0</div>
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
           </div>
           <div class="integral">合计利美积分（888）个</div>
         </div>
       </div>
       <div class="right">
-<<<<<<< HEAD
         <div class="settlement-btn" @click="settle()">
-=======
-        <div class="settlement-btn">
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
           <p class="text">结算(0)</p>
         </div>
       </div>
@@ -102,14 +94,11 @@ export default {
       shopcartGoods: shopcartGoods
     }
   },
-<<<<<<< HEAD
   methods: {
     settle() {
       this.$router.push('/confirm-order')
     }
   },
-=======
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
   components: {
     Navbar,
     GoodsItem,
@@ -197,10 +186,7 @@ export default {
       flex: 1;
       display: flex;
       justify-content: space-between;
-<<<<<<< HEAD
       align-items: center;
-=======
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
       padding: 0 12px;
        &::after {
         display: block;
@@ -223,7 +209,6 @@ export default {
         }
       }
       .statistic {
-<<<<<<< HEAD
         display: flex;
         flex-direction: column;
         .total-wrap {
@@ -240,22 +225,6 @@ export default {
               font-size: 14px;
               color: #F64952;
             }
-=======
-        height: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .total-wrap {
-          display: flex;
-          align-items: center;
-          .title {
-            font-size: 14px;
-            color: #222;
-          }
-          .total {
-            font-size: 14px;
-            color: #F64952;
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
           }
         }
         .integral {

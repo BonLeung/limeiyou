@@ -12,7 +12,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/home',
+      path: '/',
       name: 'home',
       component: () => import('./views/home/home.vue')
     },
@@ -55,21 +55,6 @@ export default new Router({
       path: '/shopcart',
       name: 'shopcart',
       component: () => import('./views/shopcart/shopcart.vue')
-    },
-    {
-      path: '/confirm-order',
-      name: 'confirm-order',
-      component: () => import('./views/confirm-order/confirm-order.vue')
-    },
-    {
-      path: '/address',
-      name: 'address',
-      component: () => import('./views/address/address.vue')
-    },
-    {
-      path: '/add-address',
-      name: 'add-address',
-      component: () => import('./views/add-address/add-address.vue')
     },
     {
       path: '/pay-success',
@@ -210,11 +195,6 @@ export default new Router({
       path: '/checkorder',
       name: 'checkorder',
       component: () => import('./views/order-detail/checkorder.vue')
-    },
-    {
-      path: '/pay-success',
-      name: 'pay-success',
-      component: () => import('./views/pay-success/pay-success.vue')
     },
     {
       path: '/address',

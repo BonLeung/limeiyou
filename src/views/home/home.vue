@@ -21,14 +21,10 @@
         <div class="swiper">
           <cube-slide ref="slide" :data="items">
             <cube-slide-item v-for="(item, index) in items" :key="index">
-<<<<<<< HEAD
               <div class="banner-wrap">
                 <img :src="item.image" alt="" class="banner-bg">
                 <img :src="item.image" alt="" class="banner">
               </div>
-=======
-              <img :src="item.image" alt="" class="banner">
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             </cube-slide-item>
           </cube-slide>
         </div>
@@ -36,7 +32,6 @@
       <div class="content">
         <div class="action-nav">
           <div class="nav-item">
-<<<<<<< HEAD
             <router-link to="/owner">
              <img src="../../common/image/home/bg1.png" alt="">
              <div class="name">申请<br>业主</div>
@@ -65,26 +60,6 @@
               <img src="../../common/image/home/bg5.png" alt="">
               <div class="name">商家<br>入驻</div>
              </router-link>
-=======
-            <img src="../../common/image/home/bg1.png" alt="">
-            <div class="name">申请<br>业主</div>
-          </div>
-           <div class="nav-item">
-            <img src="../../common/image/home/bg2.png" alt="">
-            <div class="name">申请<br>楼长</div>
-          </div>
-           <div class="nav-item">
-            <img src="../../common/image/home/bg3.png" alt="">
-            <div class="name">申请<br>区长</div>
-          </div>
-           <div class="nav-item">
-            <img src="../../common/image/home/bg4.png" alt="">
-            <div class="name">申请<br>店长</div>
-          </div>
-           <div class="nav-item">
-            <img src="../../common/image/home/bg5.png" alt="">
-            <div class="name">商家<br>入驻</div>
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
           </div>
         </div>
         <div class="advertisement-wrap">
@@ -134,7 +109,6 @@ export default {
   .header {
     position: relative;
     .swiper {
-<<<<<<< HEAD
       height: 230px;
       .banner-wrap {
         position: relative;
@@ -164,12 +138,6 @@ export default {
           filter: blur(2px);
           transform: scale(1.9) translateX(-92px);
         }
-=======
-      height: 250px;
-      .banner {
-        width: 100%;
-        height: 250px;
->>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
       }
       /deep/ .cube-slide-dots {
         bottom: 10px;

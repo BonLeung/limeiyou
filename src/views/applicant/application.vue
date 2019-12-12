@@ -2,7 +2,6 @@
   <div class="application">
     <navbar title="申请业主" />
     <div class="body">
-      
       <div class="avator">
         <span><img src="../../common/image/applicant/text.png" alt=""></span>
         <span>更换头像></span>
