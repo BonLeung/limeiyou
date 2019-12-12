@@ -10,8 +10,11 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+<<<<<<< HEAD
   data: {
     eventBus: new Vue()
   },
+=======
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
   render: h => h(App)
 }).$mount('#app')

@@ -87,7 +87,11 @@ const orders = [{
   ],
   totalNum: 1,
   amount: '899.00',
+<<<<<<< HEAD
   integral: 198,
+=======
+  integral: 198
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
 }, {
   id: 2,
   time: '2018-12-14',
@@ -111,7 +115,11 @@ const orders = [{
   ],
   totalNum: 1,
   amount: '899.00',
+<<<<<<< HEAD
   integral: 198,
+=======
+  integral: 198
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
 }, {
   id: 3,
   time: '2018-12-14',
@@ -190,6 +198,7 @@ export default {
   data() {
     return {
       tabs: tabs,
+<<<<<<< HEAD
       allOrders: orders,
       status: ''
     }
@@ -208,6 +217,15 @@ export default {
     },
     orders() {
       const status = this.status
+=======
+      tabIndex: 0,
+      allOrders: orders
+    }
+  },
+  computed: {
+    orders() {
+      const status = this.tabs[this.tabIndex].status
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
       if (status === '') {
         return this.allOrders
       }
@@ -222,8 +240,12 @@ export default {
   },
   methods: {
     changeTab(index) {
+<<<<<<< HEAD
       const status = this.tabs[index].status
       this.status = status
+=======
+      this.tabIndex = index
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
     }
   },
   components: {
@@ -271,7 +293,11 @@ export default {
             width: 48px;
             height: 2px;
             background-color: #F64952;
+<<<<<<< HEAD
             animation: width .3s;
+=======
+            transition: all .3s;
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
           }
         }
       }
@@ -291,6 +317,7 @@ export default {
     }
   }
 }
+<<<<<<< HEAD
 
 @keyframes width {
   0% {
@@ -300,4 +327,6 @@ export default {
     width: 48px;
   }
 }
+=======
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
 </style>

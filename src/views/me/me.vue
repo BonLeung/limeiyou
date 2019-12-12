@@ -3,11 +3,16 @@
     <cube-scroll>
       <div class="header">
         <div class="setting-wrap">
+<<<<<<< HEAD
           <div class="setting" @click="toInstall">
+=======
+          <div class="setting">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <img class="icon-setting" src="../../common/image/me/ic-setting.png" alt="">
           </div>
         </div>
         <div class="user-wrap">
+<<<<<<< HEAD
           <template v-if="isLogin">
             <div class="avatar-wrap">
               <img src="../../common/image/test/avatar.png" alt="" class="avatar">
@@ -18,6 +23,12 @@
             <img class="none-avatar" src="../../common/image/mall/icon-avater.png" alt="">
             <p class="username">登录/注册</p>
           </router-link>
+=======
+          <div class="avatar-wrap">
+            <img src="../../common/image/test/avatar.png" alt="" class="avatar">
+          </div>
+          <p class="username">Carolyn Meyer</p>
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
         </div>
         <div class="order-nav-wrap">
           <div class="order-nav-content">
@@ -32,6 +43,7 @@
                 </router-link>
               </div>
               <ul class="nav-list">
+<<<<<<< HEAD
                  <router-link tag="li" to="/my-orders?status=0" class="nav-item">
                   <img class="icon" src="../../common/image/me/order-nav1.png" alt="">
                   <div class="name">待付款</div>
@@ -52,6 +64,28 @@
                   <img class="icon" src="../../common/image/me/order-nav5.png" alt="">
                   <div class="name">退款售后</div>
                 </router-link>
+=======
+                <li class="nav-item">
+                  <img class="icon" src="../../common/image/me/order-nav1.png" alt="">
+                  <div class="name">待付款</div>
+                </li>
+                <li class="nav-item">
+                  <img class="icon" src="../../common/image/me/order-nav2.png" alt="">
+                  <div class="name">待发货</div>
+                </li>
+                <li class="nav-item">
+                  <img class="icon" src="../../common/image/me/order-nav3.png" alt="">
+                  <div class="name">待收货</div>
+                </li>
+                <li class="nav-item">
+                  <img class="icon" src="../../common/image/me/order-nav4.png" alt="">
+                  <div class="name">待评价</div>
+                </li>
+                <li class="nav-item">
+                  <img class="icon" src="../../common/image/me/order-nav5.png" alt="">
+                  <div class="name">退款售后</div>
+                </li>
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
               </ul>
             </div>
           </div>
@@ -59,49 +93,77 @@
       </div>
       <div class="content">
         <ul class="nav-list">
+<<<<<<< HEAD
           <li class="nav-item" @click="toWelfare">
+=======
+          <li class="nav-item">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <div class="nav-content">
               <img src="../../common/image/me/icon-gift.png" alt="" class="icon">
               <span class="name">我的利美福利</span>
             </div>
             <img src="../../common/image/me/icon-right.png" alt="" class="icon-right">
           </li>
+<<<<<<< HEAD
           <li class="nav-item" @click="toWomen">
+=======
+          <li class="nav-item">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <div class="nav-content">
               <img src="../../common/image/me/icon-beauty.png" alt="" class="icon">
               <span class="name">我的利美佳人</span>
             </div>
             <img src="../../common/image/me/icon-right.png" alt="" class="icon-right">
           </li>
+<<<<<<< HEAD
           <li class="nav-item" @click="toWallet">
+=======
+          <li class="nav-item">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <div class="nav-content">
               <img src="../../common/image/me/icon-wallet.png" alt="" class="icon">
               <span class="name">我的钱包</span>
             </div>
             <img src="../../common/image/me/icon-right.png" alt="" class="icon-right">
           </li>
+<<<<<<< HEAD
           <li class="nav-item" @click="toQrcode">
+=======
+          <li class="nav-item">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <div class="nav-content">
               <img src="../../common/image/me/icon-qrcode.png" alt="" class="icon">
               <span class="name">我的二维码</span>
             </div>
             <img src="../../common/image/me/icon-right.png" alt="" class="icon-right">
           </li>
+<<<<<<< HEAD
           <li class="nav-item" @click="toAddress">
+=======
+          <li class="nav-item">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <div class="nav-content">
               <img src="../../common/image/me/icon-address.png" alt="" class="icon">
               <span class="name">我的地址</span>
             </div>
             <img src="../../common/image/me/icon-right.png" alt="" class="icon-right">
           </li>
+<<<<<<< HEAD
           <li class="nav-item" @click="toNews">
+=======
+          <li class="nav-item">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <div class="nav-content">
               <img src="../../common/image/me/icon-message.png" alt="" class="icon">
               <span class="name">我的消息</span>
             </div>
             <img src="../../common/image/me/icon-right.png" alt="" class="icon-right">
           </li>
+<<<<<<< HEAD
           <li class="nav-item" @click="toPassword">
+=======
+          <li class="nav-item">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
             <div class="nav-content">
               <img src="../../common/image/me/icon-lock.png" alt="" class="icon">
               <span class="name">修改密码</span>
@@ -130,6 +192,7 @@
 
 <script>
 export default {
+<<<<<<< HEAD
   name: 'me',
   data() {
     return {
@@ -167,6 +230,9 @@ export default {
       this.$router.push('/charge-password')
     }
   }
+=======
+
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
 }
 </script>
 
@@ -226,6 +292,7 @@ export default {
           border-radius: 50%;
         }
       }
+<<<<<<< HEAD
       .none-avatar {
         width: 90px;
         height: 90px;
@@ -233,6 +300,8 @@ export default {
         border-radius: 50%;
         box-shadow: 0px 0px 10px 0px rgba(255,237,175,0.5);
       }
+=======
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
       .username {
         margin-top: 8px;
         height: 16px;
@@ -240,7 +309,10 @@ export default {
         font-size: 17px;
         font-weight: 500;
         color: #fff;
+<<<<<<< HEAD
         text-align: center;
+=======
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
       }
     }
     .order-nav-wrap {

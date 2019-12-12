@@ -1,6 +1,10 @@
 <template>
   <div class="select-city">
+<<<<<<< HEAD
     <navbar title="地区选择" />
+=======
+    <navbar title="选择地区" />
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
     <div class="content">
       <div class="city-wrap">
         <div class="title-wrap">

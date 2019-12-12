@@ -1,6 +1,9 @@
 # limeiyou
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
 ## Project setup
 ```
 yarn install
@@ -28,6 +31,7 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+<<<<<<< HEAD
 =======
 #### 介绍
 {**以下是码云平台说明，您可以替换此简介**
@@ -67,3 +71,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
 >>>>>>> a2772bb694b55e27492b5c513510bc4513566860
+=======
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca

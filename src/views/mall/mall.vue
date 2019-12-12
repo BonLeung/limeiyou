@@ -1,6 +1,7 @@
 <template>
   <div class="mall">
     <navbar title="利美商城">
+<<<<<<< HEAD
       <div
         class="shopcart extends-click"
         slot="right"
@@ -9,6 +10,10 @@
           class="icon"
           src="../../common/image/mall/icon-shopcart-d.png"
           alt="">
+=======
+      <div class="shopcart extends-click" slot="right">
+        <img class="icon" src="../../common/image/mall/icon-shopcart-d.png" alt="">
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
       </div>
     </navbar>
     <div class="content">
@@ -169,11 +174,14 @@ export default {
   mounted() {
 
   },
+<<<<<<< HEAD
   methods: {
     goShopcart() {
       this.$router.push('/shopcart')
     }
   },
+=======
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
   components: {
     Navbar,
     ShopItem

@@ -61,8 +61,13 @@ export default {
   }
   .title-wrap {
     position: absolute;
+<<<<<<< HEAD
     left: 20%;
     right: 20%;
+=======
+    left: 31px;
+    right: 31px;
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
     top: 0;
     height: 44px;
     display: flex;

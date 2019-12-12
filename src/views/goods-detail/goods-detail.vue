@@ -127,9 +127,13 @@
           </div>
         </div>
         <div class="foot">
+<<<<<<< HEAD
           <!-- <router-link to="/shopcart"> -->
           <div class="confirm-btn" @click="confirm">确认</div>
           <!-- </router-link> -->
+=======
+          <div class="confirm-btn">确认</div>
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
         </div>
       </div>
     </transition>
@@ -206,8 +210,12 @@ export default {
           comment: '您好，非常感谢您对利美官方旗舰店的支持，您的肯定就是对我们最大的支持。我们不定期会开展各种优惠活动的呢~建议您可以收藏关注下我们店铺...'
         }]
       },
+<<<<<<< HEAD
       modalShow: false,
       action: ''
+=======
+      modalShow: false
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
     }
   },
   computed: {
@@ -227,6 +235,7 @@ export default {
       this.modalShow = false
     },
     add() {
+<<<<<<< HEAD
       this.action = 'add'
       this.showModal()
     },
@@ -239,6 +248,12 @@ export default {
       if (this.action === 'buy') {
         this.$router.push('/checkorder')
       }
+=======
+      this.showModal()
+    },
+    buy() {
+      this.showModal()
+>>>>>>> fa3efc97221b4b79b646ce609c5c463929183dca
     }
   },
   components: {
