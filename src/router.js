@@ -57,6 +57,11 @@ export default new Router({
       component: () => import('./views/shopcart/shopcart.vue')
     },
     {
+      path: '/confirm-order',
+      name: 'confirm-order',
+      component: () => import('./views/confirm-order/confirm-order.vue')
+    },
+    {
       path: '/pay-success',
       name: 'pay-success',
       component: () => import('./views/pay-success/pay-success.vue')
